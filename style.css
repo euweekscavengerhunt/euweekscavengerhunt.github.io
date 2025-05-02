@@ -36,8 +36,7 @@ footer {
 main#app {
   flex: 1;
   padding: 2rem;
-  max-width: 600px;
-  margin: 0 auto;
+  margin: 0 100px;
   background: white;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -46,7 +45,7 @@ main#app {
 /* Question styles */
 h2 {
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #444;
 }
 
@@ -55,12 +54,12 @@ ul {
 }
 
 li {
-  margin-bottom: 0.75rem;
+  margin-bottom: 2rem;
 }
 
 button {
-  padding: 0.75rem 1.25rem;
-  font-size: 1rem;
+  padding: 2rem 2.25rem;
+  font-size: 2rem;
   background: #4a90e2;
   color: white;
   border: none;
