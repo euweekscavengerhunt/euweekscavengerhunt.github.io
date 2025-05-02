@@ -1,0 +1,27 @@
+<h2>Find three examples of the two EU colors in your surroundings and take a picture/selfie with each one.</h2>
+<ul>
+  <li><button onclick="checkAnswer(0)">Completed!</button></li>
+</ul>
+
+<h3 id="feedback" style="margin-top: 1rem; font-weight: bold;"></h3>
+
+<script>
+  (() => {
+    let answered = false;
+
+    window.checkAnswer = function (answer) {
+      if (answered) return;
+      answered = true;
+
+      const feedback = document.getElementById("feedback");
+      if (answer === 0) {
+        feedback.textContent = "Awesome! Next question coming up!";
+        feedback.style.color = "green";
+        setTimeout(() => location.hash = "questions/question3", 1000);
+      } else {
+        feedback.textContent = "Wrong!";
+        feedback.style.color = "red";
+      }
+    };
+  })();
+</script>

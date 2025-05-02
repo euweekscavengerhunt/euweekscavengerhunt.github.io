@@ -1,4 +1,4 @@
-/* Reset + base styles */
+/* Base reset */
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +20,7 @@ header {
   color: white;
   padding: 1rem;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-size: 1.5rem;
 }
 
 /* Footer */
@@ -29,46 +29,63 @@ footer {
   color: #aaa;
   text-align: center;
   padding: 0.75rem;
-  margin-top: auto;
+  font-size: 1.4rem;
 }
 
-/* Main app container */
+/* Main quiz area */
 main#app {
   flex: 1;
-  padding: 2rem;
-  margin: 0 100px;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* Quiz card style */
+main#app > div {
   background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
 /* Question styles */
 h2 {
+  font-size: 2.5rem;
   margin-bottom: 1rem;
-  font-size: 2rem;
-  color: #444;
 }
-
+h3 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
 ul {
   list-style: none;
+  padding-left: 0;
 }
 
 li {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
+/* Buttons */
 button {
-  padding: 2rem 2.25rem;
+  width: 100%;
+  padding: 0.75rem;
   font-size: 2rem;
   background: #4a90e2;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background 0.2s ease;
 }
 
 button:hover {
   background: #357bd8;
+}
+
+@media (min-width: 600px) {
+  main#app {
+    margin: 0 auto;
+    padding: 2rem;
+  }
 }
 

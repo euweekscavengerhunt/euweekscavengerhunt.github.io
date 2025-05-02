@@ -1,0 +1,56 @@
+<h2>Travel into the past by taking 10 steps backward</h2>
+
+<div>
+    <h2>BONUS QUESTION:</h2>
+<h2>When did Sweden join the EU?</h2>
+
+<ul>
+    <li><button onclick="checkAnswer(0)">1995</button></li>
+    <li><button onclick="checkAnswer(1)">2000</button></li>
+    <li><button onclick="checkAnswer(2)">2005</button></li>
+</ul>
+<h3>Save the bonus code for bonus points!</h3>
+<h3 id="feedback2" style="margin-top: 1rem; font-weight: bold;"></h3>
+</div>
+
+<ul>
+  <li><button onclick="checkComplete(0)">Completed!</button></li>
+</ul>
+
+<h3 id="feedback" style="margin-top: 1rem; font-weight: bold;"></h3>
+
+  <script>
+    (() => {
+      let answeredCheckAnswer = false;
+      let answeredCheckComplete = false;
+
+      window.checkAnswer = function (answer) {
+        if (answeredCheckAnswer) return;
+        answeredCheckAnswer = true;
+
+        const feedback = document.getElementById("feedback2");
+        if (answer === 0) {
+          feedback.textContent = "Nice! Here's the bonus code: EU1SAWES0M3";
+          feedback.style.color = "blue";
+        } else {
+          feedback.textContent = "Wrong!";
+          feedback.style.color = "red";
+        }
+      };
+
+      window.checkComplete = function (answer) {
+        if (answeredCheckComplete) return;
+        answeredCheckComplete = true;
+
+        const feedback = document.getElementById("feedback");
+        if (answer === 0) {
+          feedback.textContent = "Awesome! Next question coming up!";
+          feedback.style.color = "green";
+          setTimeout(() => location.hash = "questions/question6", 1000);
+        } else {
+          feedback.textContent = "Wrong!";
+          feedback.style.color = "red";
+        }
+      };
+    })();
+  </script>

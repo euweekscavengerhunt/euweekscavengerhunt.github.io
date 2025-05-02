@@ -1,0 +1,27 @@
+<h2>Take a group picture to show your own little union. You’re free to be creative — for example, only show your shoes standing in a circle.</h2>
+<ul>
+  <li><button onclick="checkAnswer(0)">Completed!</button></li>
+</ul>
+
+<h3 id="feedback" style="margin-top: 1rem; font-weight: bold;"></h3>
+
+<script>
+  (() => {
+    let answered = false;
+
+    window.checkAnswer = function (answer) {
+      if (answered) return;
+      answered = true;
+
+      const feedback = document.getElementById("feedback");
+      if (answer === 0) {
+        feedback.textContent = "Awesome! Next question coming up!";
+        feedback.style.color = "green";
+        setTimeout(() => location.hash = "questions/question5", 1000);
+      } else {
+        feedback.textContent = "Wrong!";
+        feedback.style.color = "red";
+      }
+    };
+  })();
+</script>

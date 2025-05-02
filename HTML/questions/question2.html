@@ -1,0 +1,30 @@
+<h2>What are the colors of the EU flag? (Maybe show examples)</h2>
+<ul>
+  <li><button onclick="checkAnswer(0)">Rainbow</button></li>
+  <li><button onclick="checkAnswer(1)">Blue and Yellow</button></li>
+  <li><button onclick="checkAnswer(2)">Red and Green</button></li>
+</ul>
+
+<h3 id="feedback" style="margin-top: 1rem; font-weight: bold;"></h3>
+
+<script>
+  (() => {
+    let answered = false;
+
+    window.checkAnswer = function (answer) {
+      if (answered) return;
+      answered = true;
+
+      const feedback = document.getElementById("feedback");
+      if (answer === 1) {
+        feedback.textContent = "Correct!";
+        feedback.style.color = "green";
+        setTimeout(() => location.hash = "tasks/task2", 1000);
+      } else {
+        feedback.textContent = "Wrong!";
+        feedback.style.color = "red";
+      }
+    };
+  })();
+</script>
+
