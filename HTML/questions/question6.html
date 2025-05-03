@@ -1,29 +1,11 @@
-<h2>Which toy comes from Denmark, an EU country?</h2>
+<h2 data-i18n="question6"></h2>
+
 <ul>
-  <li><button onclick="checkAnswer(0)">Barbie</button></li>
-  <li><button onclick="checkAnswer(1)">LEGO</button></li>
-  <li><button onclick="checkAnswer(2)">Nintendo</button></li>
+  <li><button onclick="checkAnswer(0, 1, 'tasks/task6')" data-i18n="answer1_q6"></button></li>
+  <li><button onclick="checkAnswer(1, 1, 'tasks/task6')" data-i18n="answer2_q6"></button></li>
+  <li><button onclick="checkAnswer(2, 1, 'tasks/task6')" data-i18n="answer3_q6"></button></li>
 </ul>
 
 <h3 id="feedback" style="margin-top: 1rem; font-weight: bold;"></h3>
 
-<script>
-  (() => {
-    let answered = false;
-
-    window.checkAnswer = function (answer) {
-      if (answered) return;
-      answered = true;
-
-      const feedback = document.getElementById("feedback");
-      if (answer === 1) {
-        feedback.textContent = "Correct!";
-        feedback.style.color = "green";
-        setTimeout(() => location.hash = "tasks/task6", 1000);
-      } else {
-        feedback.textContent = "Wrong!";
-        feedback.style.color = "red";
-      }
-    };
-  })();
-</script>
+<script src="/js/question-common.js"></script>
