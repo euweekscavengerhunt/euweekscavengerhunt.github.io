@@ -10,11 +10,7 @@ function loadPage() {
       })
       .then(html => {
         container.innerHTML = html;
-
-        // Re-run translations on new content
-        updatePageText();  // <-- Add this line
-
-        // Re-insert scripts (keep your existing logic)
+        updatePageText();
         const scripts = container.querySelectorAll("script");
         scripts.forEach(oldScript => {
           const newScript = document.createElement("script");
@@ -33,7 +29,6 @@ function loadPage() {
       });
   }
 
-  // Make updatePageText globally available
   window.updatePageText = function() {
     document.querySelectorAll("[data-i18n]").forEach(el => {
       const key = el.getAttribute("data-i18n");

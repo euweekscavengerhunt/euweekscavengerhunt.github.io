@@ -1,30 +1,8 @@
-<h2>Walk 15 steps like a duck
-    Question completed? Choose between yes and no.
-    If yes, write “Proud Duck” in your message/email.
-    Take a duck selfie and send it!?</h2>
+<h2 data-i18n="task8"></h2>
 <ul>
-  <li><button onclick="checkAnswer(0)">Completed!</button></li>
+    <li><button onclick="checkAnswer('endscreen')" data-i18n="complete"></button></li>
 </ul>
 
 <h3 id="feedback" style="margin-top: 1rem; font-weight: bold;"></h3>
 
-<script>
-  (() => {
-    let answered = false;
-
-    window.checkAnswer = function (answer) {
-      if (answered) return;
-      answered = true;
-
-      const feedback = document.getElementById("feedback");
-      if (answer === 0) {
-        feedback.textContent = "Congrats on finishing!";
-        feedback.style.color = "green";
-        setTimeout(() => location.hash = "endscreen", 1000);
-      } else {
-        feedback.textContent = "Wrong!";
-        feedback.style.color = "red";
-      }
-    };
-  })();
-</script>
+<script src="/js/task-common.js"></script>

@@ -4,58 +4,19 @@
   <meta charset="UTF-8" />
   <title>SCAVANGER HUNT</title>
   <link rel="stylesheet" href="style.css" />
-
   <script defer src="router.js"></script>
+  <script defer src="/js/i18n.js"></script>
+  <script src="/js/language-togge.js"></script>
 </head>
 <body>
-
   <header>
     <h1>EU WEEK SCAVANGER HUNT!</h1>
     <button id="lang-toggle">Svenska</button>
   </header>
-
   <main id="app"></main>
-
   <footer>
     <p>In assosiation with the European Survey Corps ESC</p>
     <p>© 2025 Rafik Altonchi</p>
   </footer>
-
-  <script src="i18n.js"></script>
-
-  <script>
-    
-    document.addEventListener("DOMContentLoaded", () => {
-        const toggleBtn = document.getElementById("lang-toggle");
-
-        function updateButtonLabel() {
-            toggleBtn.textContent = currentLang === "en"
-                ? translations["sv"].toggleLabel
-                : translations["en"].toggleLabel;
-        }
-
-        function updatePageText() {
-            document.querySelectorAll("[data-i18n]").forEach(el => {
-                const key = el.getAttribute("data-i18n");
-                el.textContent = translate(key);
-            });
-        }
-
-        // Initial render
-        updatePageText();
-        updateButtonLabel();
-
-        toggleBtn.addEventListener("click", () => {
-            const newLang = currentLang === "en" ? "sv" : "en";
-            setLanguage(newLang);
-        });
-
-        document.addEventListener("languageChange", () => {
-            updatePageText();
-            updateButtonLabel();
-        });
-    });
-    </script>
-
 </body>
 </html>

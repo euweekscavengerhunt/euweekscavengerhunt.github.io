@@ -1,27 +1,8 @@
-<h2>Sing one of a team member’s favorite songs together. Write the name of the song in your message/email.?</h2>
+<h2 data-i18n="task7"></h2>
 <ul>
-  <li><button onclick="checkAnswer(0)">Completed!</button></li>
+    <li><button onclick="checkAnswer('questions/question8')" data-i18n="complete"></button></li>
 </ul>
 
 <h3 id="feedback" style="margin-top: 1rem; font-weight: bold;"></h3>
 
-<script>
-  (() => {
-    let answered = false;
-
-    window.checkAnswer = function (answer) {
-      if (answered) return;
-      answered = true;
-
-      const feedback = document.getElementById("feedback");
-      if (answer === 0) {
-        feedback.textContent = "Awesome! Next question coming up!";
-        feedback.style.color = "green";
-        setTimeout(() => location.hash = "questions/question8", 1000);
-      } else {
-        feedback.textContent = "Wrong!";
-        feedback.style.color = "red";
-      }
-    };
-  })();
-</script>
+<script src="/js/task-common.js"></script>
