@@ -7,7 +7,9 @@
 
       const feedback = document.getElementById("feedback");
       const isCorrect = answer === correctIndex;
-      feedback.textContent = isCorrect ? translate("correct") : translate("wrong");
+
+      if(isCorrect) {Score.addPoint()}
+      feedback.textContent = isCorrect ? translate("correct"): translate("wrong");
       feedback.style.color = isCorrect ? "green" : "red";
 
       setTimeout(() => {

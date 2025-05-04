@@ -43,6 +43,7 @@ function loadPage() {
       .then(html => {
         container.innerHTML = html;
         updatePageText();
+        updateScoreDisplay();
 
         const scripts = container.querySelectorAll("script");
         scripts.forEach(oldScript => {
@@ -68,6 +69,13 @@ function loadPage() {
       el.textContent = translate(key);
     });
   };
+
+  function updateScoreDisplay() {
+    const el = document.getElementById("scoreDisplay");
+    if (el) {
+      el.textContent = `Score: ${Score.getScore()}`;
+    }
+  }
 
   window.addEventListener("hashchange", loadPage);
   window.addEventListener("DOMContentLoaded", loadPage);

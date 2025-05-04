@@ -7,11 +7,17 @@
   <script defer src="router.js"></script>
   <script defer src="/JS/i18n.js"></script>
   <script src="/JS/language-toggle.js"></script>
+  <script src="/JS/score.js"></script>
 </head>
 <body>
   <header>
-    <h1>EU WEEK SCAVANGER HUNT!</h1>
-    <button id="lang-toggle">Svenska</button>
+    <h1>EU WEEK</h1>
+    <h3>SCAVANGER HUNT</h3>
+    <div id="uTitle">
+        <div id="scale">  <button id="lang-toggle">Svenska</button> </div>
+        <div id="scale" class="empty">  </div>
+        <div id="scale">  <span id="scoreDisplay">Score: 0</span></div>
+    </div>
   </header>
   <main id="app"></main>
   <footer>
