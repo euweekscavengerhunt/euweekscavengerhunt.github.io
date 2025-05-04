@@ -137,6 +137,6 @@ button:active {
 @media (min-width: 600px) {
   main#app {
     margin: 0 auto;
-    padding: 2rem;
+    padding: 0rem;
   }
 }
