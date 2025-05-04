@@ -6,15 +6,13 @@
       answered = true;
 
       const feedback = document.getElementById("feedback");
-      if (answer === correctIndex) {
-        feedback.textContent = translate("correct");
-        feedback.style.color = "green";
-        setTimeout(() => (location.hash = nextPath), 1000);
-      } else {
-        feedback.textContent = translate("wrong");
-        feedback.style.color = "red";
-        setTimeout(() => (location.hash = nextPath), 1000);
-      }
+      const isCorrect = answer === correctIndex;
+      feedback.textContent = isCorrect ? translate("correct") : translate("wrong");
+      feedback.style.color = isCorrect ? "green" : "red";
+
+      setTimeout(() => {
+        location.hash = nextPath;
+      }, 1000);
     };
 
     document.addEventListener("languageChange", () => {

@@ -12,6 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 /* Header */
@@ -88,4 +89,3 @@ button:hover {
     padding: 2rem;
   }
 }
-
