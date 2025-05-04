@@ -1,4 +1,6 @@
 window.currentPathIndex = 0;
+window.highestPathIndexReached = 0;
+window.cheating = 0;
 
 const allPaths = [
   "questions/question1",
@@ -27,12 +29,19 @@ function loadPage() {
 
     const pathIndex = allPaths.indexOf(page);
     if (pathIndex !== -1) {
-      if (pathIndex > window.currentPathIndex) {
-        window.currentPathIndex = pathIndex;
-      } else if (pathIndex < window.currentPathIndex) {
+      if (pathIndex > window.highestPathIndexReached) {
+        if ((pathIndex - highestPathIndexReached) > 2){
+            cheating = 1;
+            console.log("CHEATING DETECTED")
+        }
+        window.highestPathIndexReached = pathIndex;
+        console.log("cheat: " + cheating);
+    }
+    else if (pathIndex < window.currentPathIndex) {
         location.hash = allPaths[window.currentPathIndex];
         return;
-      }
+    }
+    window.currentPathIndex = pathIndex;
     }
 
     fetch(`HTML/${page}.html`)

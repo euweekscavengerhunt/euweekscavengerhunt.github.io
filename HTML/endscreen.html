@@ -1,1 +1,20 @@
-<h1>The End</h1>
+<h1>Good Job!</h1>
+
+<h3>be sure to save this completion card for submition</h3>
+<div>
+    <h2>Completion Card</h2>
+    <div>
+        <h3>Correct Answers:</h3>
+        <h3 id="scoreCount"></h3>
+        <p id="verification" style="display: none;">Verified completion - all questions and tasks completed in order</p>
+    </div>
+</div>
+<script>
+    const scoreCount = document.getElementById("scoreCount");
+    scoreCount.textContent = Score.getScore();
+
+    const verification = document.getElementById("verification");
+    if (window.cheating == 0) {
+        verification.style.display = "block";
+    }
+</script>
