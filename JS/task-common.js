@@ -5,4 +5,11 @@
         feedback.style.color = "green";
         setTimeout(() => (location.hash = nextPath), 1000);
       }
+      document.addEventListener("languageChange", () => {
+        updatePageText();
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        updatePageText();
+      });
   })();

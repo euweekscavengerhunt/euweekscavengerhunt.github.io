@@ -1,16 +1,23 @@
-// Global progress tracker (starts at 0 = question1)
-window.currentQuestionIndex = 0;
+window.currentPathIndex = 0;
 
-// Define the ordered question paths
-const questionPaths = [
+const allPaths = [
   "questions/question1",
+  "tasks/task1",
   "questions/question2",
+  "tasks/task2",
   "questions/question3",
+  "tasks/task3",
   "questions/question4",
+  "tasks/task4",
   "questions/question5",
+  "tasks/task5",
   "questions/question6",
+  "tasks/task6",
   "questions/question7",
-  "questions/question8"
+  "tasks/task7",
+  "questions/question8",
+  "tasks/task8",
+  "endscreen"
 ];
 
 function loadPage() {
@@ -18,14 +25,12 @@ function loadPage() {
     const page = hash.replace("#", "");
     const container = document.getElementById("app");
 
-    const questionIndex = questionPaths.indexOf(page);
-    if (questionIndex !== -1) {
-      if (questionIndex > window.currentQuestionIndex) {
-        // Progressing forward, update tracker
-        window.currentQuestionIndex = questionIndex;
-      } else if (questionIndex < window.currentQuestionIndex) {
-        // Trying to go backward – block and redirect to current question
-        location.hash = questionPaths[window.currentQuestionIndex];
+    const pathIndex = allPaths.indexOf(page);
+    if (pathIndex !== -1) {
+      if (pathIndex > window.currentPathIndex) {
+        window.currentPathIndex = pathIndex;
+      } else if (pathIndex < window.currentPathIndex) {
+        location.hash = allPaths[window.currentPathIndex];
         return;
       }
     }
@@ -39,7 +44,6 @@ function loadPage() {
         container.innerHTML = html;
         updatePageText();
 
-        // Dynamically reload script tags
         const scripts = container.querySelectorAll("script");
         scripts.forEach(oldScript => {
           const newScript = document.createElement("script");
