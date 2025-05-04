@@ -35,7 +35,9 @@ footer {
   font-size: 1.4rem;
   padding-bottom: 150px;
 }
-
+main{
+    flex: 1;
+}
 /* Main quiz area */
 main#app {
   flex: 1;
