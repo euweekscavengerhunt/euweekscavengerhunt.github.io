@@ -36,7 +36,7 @@ function loadPage() {
             console.log("CHEATING DETECTED")
         }
         window.highestPathIndexReached = pathIndex;
-        console.log("cheat: " + cheating);
+        //console.log("cheat: " + cheating);
     }
     else if (pathIndex < window.currentPathIndex) {
         location.hash = allPaths[window.currentPathIndex];
