@@ -3,6 +3,7 @@ window.highestPathIndexReached = 0;
 window.cheating = 0;
 
 const allPaths = [
+    "startScreen",
   "questions/question1",
   "tasks/task1",
   "questions/question2",
@@ -23,14 +24,14 @@ const allPaths = [
 ];
 
 function loadPage() {
-    const hash = window.location.hash || "#questions/question1";
+    const hash = window.location.hash || "#startScreen";
     const page = hash.replace("#", "");
     const container = document.getElementById("app");
 
     const pathIndex = allPaths.indexOf(page);
     if (pathIndex !== -1) {
       if (pathIndex > window.highestPathIndexReached) {
-        if ((pathIndex - highestPathIndexReached) > 2){
+        if ((pathIndex - highestPathIndexReached) >= 2){
             cheating = 1;
             console.log("CHEATING DETECTED")
         }
