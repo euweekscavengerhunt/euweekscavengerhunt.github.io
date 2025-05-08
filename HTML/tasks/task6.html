@@ -11,12 +11,34 @@
 <h3 data-i18n="bonusInfo"></h3>
 <h3 id="feedback2" style="margin-top: 1rem; font-weight: bold;"></h3>
 </div>
+<div id="puzzle-container">
+    <h2 data-i18n="task2_1"></h2>
+    <img id="puzzle-image" src="IMG/task6/img1.jpg" alt="Puzzle Image" width=100%>
+    <div id="controls">
+      <button id="hint-btn">Hint</button>
+      <button id="reveal-btn" style="display: none;">Reveal Location</button>
+    </div>
+    <div id="location" style="display: none;">
+      <img src="IMG/task6/img5.jpg" alt="Final Image" width=100%>
+    </div>
 
-<ul>
-    <li><button onclick="checkAnswer('questions/question7')" data-i18n="complete"></button></li>
-</ul>
+    <div id="answerField">
+        <input type="text" id="answerInput" placeholder="Type your answer here">
+        <button onclick="checkWordAnswer()" id="crossButton">Submit</button>
+    </div>
+
+    <div id="result" style="display: none;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2387.852947545245!2d14.169569296864653!3d57.77868806368027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465a6d937b2b028d%3A0x64a15f7c28f276d3!2sKulturhuset%20Spira!5e0!3m2!1ssv!2sus!4v1746690905247!5m2!1ssv!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <ul>
+            <li><button onclick="checkAnswer('questions/question7')" data-i18n="complete"></button></li>
+        </ul>
+    </div>
+  </div>
+
 
 <h3 id="feedback" style="margin-top: 1rem; font-weight: bold;"></h3>
 
 <script src="/JS/task-common.js"></script>
 <script src="/JS/bonus-question.js"></script>
+<script src="/JS/picture-code-puzzle.js"></script>
