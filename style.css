@@ -91,7 +91,7 @@ button:hover {
 button:active {
     transform: scale(0.98);
   }
-  .social-button {
+    .social-button {
     display: inline-flex;
     align-items: center;
     gap: 1.5rem;
@@ -229,6 +229,12 @@ button:active {
   }
 
   #answerInput{
+    width: 100%;
+    height: 6rem;
+    font-size: 3rem;
+
+  }
+  #answerInput2{
     width: 100%;
     height: 6rem;
     font-size: 3rem;
