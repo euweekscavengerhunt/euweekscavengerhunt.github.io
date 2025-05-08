@@ -9,7 +9,7 @@
       if (answer === 0) {
         feedback.textContent = translate("bonusCode") + bonusCode;
         feedback.style.color = "blue";
-        console.log("1");
+        Score.addBonus(bonusCode);
       } else {
         feedback.textContent = translate("wrong");
         feedback.style.color = "red";

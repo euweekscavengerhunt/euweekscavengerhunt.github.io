@@ -1,5 +1,8 @@
 window.translations = {
     en: {
+        good_job: "Good job!",
+        download: "Press the download button and send  the image to the submission down bellow",
+        submission: "Submission: ",
         change: "change",
         welcomeTitle: "Welcome!",
         howToStart: "How to start",
@@ -94,6 +97,9 @@ window.translations = {
  task8: "Walk 15 steps like a duck. Take a duck selfie and send it!",
     },
     sv: {
+        good_job: "Bra jobbat!",
+        download: "Tryck på download knappen och skicka bilden genom inlämningen nedan",
+        submission: "Inlämning: ",
         change: "byt",
     welcomeTitle: "Välkommen!",
   howToStart: "Så här börjar du",

@@ -1,20 +1,54 @@
-<h1>Good Job!</h1>
+<h1 data-i18n="good_job"></h1>
 
-<h3>be sure to save this completion card for submition</h3>
-<div>
+<h3 data-i18n="download"></h3>
+<div class="completion-card">
     <h2>Completion Card</h2>
-    <div>
-        <h3>Correct Answers:</h3>
+    <div class="scores">
+        <h3>Correct Answers: </h3>
         <h3 id="scoreCount"></h3>
-        <p id="verification" style="display: none;"> ✅ </p>
     </div>
+    <div class="scores">
+        <ul id="bonusList">
+        </ul>
+    </div>
+    <h2 id="verification" style="display: none;"> ✅ </h2>
 </div>
-<script>
-    const scoreCount = document.getElementById("scoreCount");
-    scoreCount.textContent = Score.getScore();
 
-    const verification = document.getElementById("verification");
-    if (window.cheating == 0) {
-        verification.style.display = "block";
+<button onclick="downloadCard()">Download</button>
+
+<h1 data-i18n="submission"></h1>
+<button class="social-button email-button" onclick="sendEmail()">
+    <img src="IMG/mail.svg" alt="Email icon" style="width: 10%; filter: brightness(0) invert(1);">
+    Email
+  </button>
+  <button class="social-button instagram-button" onclick="sendInstagram()">
+    <img src="IMG/insta.svg" alt="Instagram icon" style="width: 10%; filter: brightness(0) invert(1);">
+    Instagram
+  </button>
+<script>
+    function downloadCard() {
+        const card = document.querySelector('.completion-card');
+        html2canvas(card).then(canvas => {
+            const link = document.createElement('a');
+            link.download = 'completion-card.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        });
     }
-</script>
+
+    function sendEmail() {
+    const recipient = "welcome@jonkoping.com"; // <-- Change this to the actual recipient's email
+    const subject = encodeURIComponent("Check out my Completion Card!");
+    const body = encodeURIComponent("Hi,\n\nLook at this Completion Card I just received!");
+    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+}
+
+
+    function sendInstagram() {
+        const instagramLink = "https://www.instagram.com/escjonkoping/";
+        window.open(instagramLink, '_blank');
+    }
+    </script>
+
+<script src="JS/completion.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>

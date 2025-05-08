@@ -91,6 +91,67 @@ button:hover {
 button:active {
     transform: scale(0.98);
   }
+  .social-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 4rem;
+    border: none;
+    border-radius: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    color: white;
+  }
+
+  .social-button:hover {
+    transform: scale(1.05);
+  }
+
+  .email-button {
+    background-color: #d44638;
+  }
+
+  .email-button:hover {
+    background-color: #bb3e32;
+  }
+
+  .instagram-button {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  }
+
+  .instagram-button:hover {
+    opacity: 0.9;
+  }
+
+  .social-button svg {
+    width: 3rem;
+    height: 3rem;
+  }
+  #bonusList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* spacing between items */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #bonusList li {
+    font-size: 2rem; /* makes the text bigger */
+    background-color: #f0f0f0;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+  .completion-card{
+    display: flex;
+    flex-direction: column;
+  }
+  .scores{
+    display: flex;
+    flex-direction: row ;
+  }
 .puzzle-container-grid{
     display: flex;
     flex-direction: column;
